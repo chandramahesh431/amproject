@@ -9,6 +9,7 @@ import NavigationIcon from "@material-ui/icons/Navigation";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import http from "./httpService";
+
 import { async } from "q";
 
 const styles = theme => ({
@@ -84,8 +85,13 @@ class Form extends React.Component {
     }&value=${this.state.value}`;
     formatUrl = formatUrl + `&path=${this.state.path}`;
     this.setState({ formatUrl });
-    const { data: response } = await http.get(formatUrl);
-    this.setState({ response });
+    //alert(formatUrl);
+    // const { data: response } = await http.get(formatUrl);
+    // this.setState({ response });
+    // alert(formatUrl);
+
+    window.location =
+      "http://localhost:4502/bin/SlingServlet2?name=jcr:title&value=chandra&path=/content/AEMattra3/en/jcr:content/root/responsivegrid/title";
   };
   render() {
     const { classes } = this.props;
